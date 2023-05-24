@@ -14,11 +14,16 @@
   const produto = new Produto("Cloud 9", "15-05-2013", "Organização de e-sports, Cloud 9 (C9)", "R$ 10000000000");
   console.log(produto.mostrarProdutos())
   
+
+  
   class ProdutosDestaque extends Produto{
     constructor (nome, dataCadastro, descricao,  preco, imagemDestaque){
       super(nome, dataCadastro, descricao, preco, imagemDestaque)
       this.imagemDestaque = imagemDestaque;
     }
+
+
+
     mostrarProdutosDestaque (){
         return `
         <h1 class = "Vasco" >${this.nome}</h1>
@@ -30,6 +35,9 @@
        // return this.nome + this.dataCadastro + this.descricao + this.preco + this.imagemDestaque;
      }
   }   
+
+
+
   const produtosDestaque = new ProdutosDestaque("Cloud 9", "15-05-2013", "Organização de e-sports, Cloud 9 (C9)", "R$ 10000000000", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cloud9_logo_c._2023.svg/1200px-Cloud9_logo_c._2023.svg.png");
   //console.log(produtosDestaque.mostrarProdutosDestaque())
   
@@ -37,6 +45,9 @@
   const produtos = document.getElementById("produto-destaque")
   produtos.insertAdjacentHTML('afterbegin', produtosDestaque.mostrarProdutosDestaque());
   
+
+
+
   
   class ProdutosdaLista extends Produto{
     constructor (nome, dataCadastro, descricao,  preco, imagemDestaque, nome2, descricao2, preco2, nome3, descricao3, preco3, nome4, descricao4, preco4){
@@ -52,10 +63,16 @@
       this.descricao4 = descricao4;
       this.preco4 = preco4;
     }
+
+
+
+
   mostrarListaProdutos() {
     return `
       
-      <div class="listinha">
+
+
+      <div class="lista">
     <div class="grid-container">
       <div class="coluna">
       <h4>${this.nome2}</h4>
@@ -77,11 +94,20 @@
     `;
   }
   }
+
+
+
   
   const produtosLIsta = new ProdutosdaLista("Imperial Esports", "25-01-2021", "Imperial Esports", "R$ 49,99", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cloud9_logo_c._2023.svg/1200px-Cloud9_logo_c._2023.svg.png", "Imperial Esports", "Equipe de Esports - Imperial Esports", "R$ 400000", "FaZe Clan", "Equipe de Esports - FaZe Clan", "R$ 200000000", "Team Liquid", "Equipe de Esports - Team Liquid", "R$ 22000000");
   
+
+
+
   const listaProdutos = document.getElementById("lista-produtos")
   listaProdutos.insertAdjacentHTML('afterbegin', produtosLIsta.mostrarListaProdutos());
+
+
+
   
   //const listaProdutos = document.getElementById("lista-produtos")
   //divListaProduto.insertAdjacentHTML('afterbegin', produtosDestaque.mostrarProdutosDestaque());
