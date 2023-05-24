@@ -8,7 +8,7 @@ body {
     gap: 15px; 
   }
   
-  .coluna {
+  .col{
     border: 5px solid rgb(255, 255, 255);
     padding: 15px; 
   }

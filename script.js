@@ -49,45 +49,45 @@
 
 
   
-  class ProdutosdaLista extends Produto{
-    constructor (nome, dataCadastro, descricao,  preco, imagemDestaque, nome2, descricao2, preco2, nome3, descricao3, preco3, nome4, descricao4, preco4){
-      super(nome, dataCadastro, descricao, preco, imagemDestaque, nome2, descricao2, preco2, nome3, descricao3, preco3, nome4, descricao4, preco4)
+  class ProdutosLista extends Produto{
+    constructor (nome, dataCadastro, descricao,  preco, imagemDestaque, name, descri, price, name1, descri1, price2, name3, descri3, price3){
+      super(nome, dataCadastro, descricao, preco, imagemDestaque, name, descri, price, name1, descri1, price2, name3, descri3, price3)
       this.imagemDestaque = imagemDestaque;
-      this.nome2 = nome2;
-      this.descricao2 = descricao2;
-      this.preco2 = preco2;
-      this.nome3 = nome3;
-      this.descricao3 = descricao3;
-      this.preco3 = preco3;
-      this.nome4 = nome4;
-      this.descricao4 = descricao4;
-      this.preco4 = preco4;
+      this.name = name;
+      this.descri = descri;
+      this.price = price;
+      this.name1 = name1;
+      this.descri1 = descri1;
+      this.price2 = price2;
+      this.name3 = name3;
+      this.descri3 = descri3;
+      this.price3 = price3;
     }
 
 
 
 
-  mostrarListaProdutos() {
+  mostrarProdutos() {
     return `
       
 
 
-      <div class="lista">
+      <div class="list">
     <div class="grid-container">
-      <div class="coluna">
-      <h4>${this.nome2}</h4>
-      <p>${this.descricao2}</p>
-      <p>${this.preco2}</p>
+      <div class="col">
+      <h4>${this.name}</h4>
+      <p>${this.descri}</p>
+      <p>${this.price}</p>
       </div>
-      <div class="coluna">
-      <h4>${this.nome3}</h4>
-      <p>${this.descricao3}</p>
-      <p>${this.preco3}</p>
+      <div class="col">
+      <h4>${this.name1}</h4>
+      <p>${this.descri1}</p>
+      <p>${this.price2}</p>
       </div>
-      <div class="coluna">
-      <h4>${this.nome4}</h4>
-      <p>${this.descricao4}</p>
-      <p>${this.preco4}</p>
+      <div class="col">
+      <h4>${this.name3}</h4>
+      <p>${this.descri3}</p>
+      <p>${this.price3}</p>
       </div>
     </div>
   </div>
@@ -98,13 +98,13 @@
 
 
   
-  const produtosLIsta = new ProdutosdaLista("Imperial Esports", "25-01-2021", "Imperial Esports", "R$ 49,99", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cloud9_logo_c._2023.svg/1200px-Cloud9_logo_c._2023.svg.png", "Imperial Esports", "Equipe de Esports - Imperial Esports", "R$ 400000", "FaZe Clan", "Equipe de Esports - FaZe Clan", "R$ 200000000", "Team Liquid", "Equipe de Esports - Team Liquid", "R$ 22000000");
+  const produtosLIsta = new ProdutosLista("Imperial Esports", "25-01-2021", "Imperial Esports", "R$40000", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cloud9_logo_c._2023.svg/1200px-Cloud9_logo_c._2023.svg.png", "Imperial Esports", "Equipe de Esports - Imperial Esports", "R$ 400000", "FaZe Clan", "Equipe de Esports - FaZe Clan", "R$ 200000000", "Team Liquid", "Equipe de Esports - Team Liquid", "R$ 22000000");
   
 
 
 
   const listaProdutos = document.getElementById("lista-produtos")
-  listaProdutos.insertAdjacentHTML('afterbegin', produtosLIsta.mostrarListaProdutos());
+  listaProdutos.insertAdjacentHTML('afterbegin', produtosLIsta.mostrarProdutos());
 
 
 
