@@ -1,3 +1,11 @@
+class MeuErro extends Error {
+  constructor(message){
+    super(message);
+    this.name = "Meu Erro";
+  }
+}
+
+ 
  // divListaProduto.insertAdjacentHTML('afterbegin', '');
  class Produto {
     constructor (nome, dataCadastro, descricao, preco){
