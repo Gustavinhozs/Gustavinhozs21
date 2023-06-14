@@ -14,8 +14,29 @@ class MeuErro extends Error {
     this.descricao = descricao;
     this.preco = preco;
   }
+
+
+  retornarAtributoProduto() {
+    try {
+      return this.mostrarProduto();
+  } catch (erro){
+      console.log(erro.stack)
+  }
+  }
+
   mostrarProdutos (){
-    return this.nome + this.dataCadastro + this.descricao + this.preco ;
+
+    if (this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != ""){
+      return `
+      <div>${this.nome}</div>
+      <div>${this.dataCadastro}</div>
+      <div>${this.descricao}</div>
+      <div>${this.preco}</div>
+      `
+  } else {
+      throw new MeuErro("Você nao preencheu os dados corretamente !")
+  }
+
   }
   }
   
@@ -30,9 +51,16 @@ class MeuErro extends Error {
       this.imagemDestaque = imagemDestaque;
     }
 
-
+    retornarAtributoDestaque() {
+      try {
+        return this.mostrarProdutoDestaque();
+    } catch (erro){
+        console.log(erro.stack)
+    }
+    }
 
     mostrarProdutosDestaque (){
+      if (this.nome != "" && this.dataCadastro != "" && this.imagemDestaque != "" && this.descricao != "" && this.preco != ""){
         return `
         <h1 class = "Vasco" >${this.nome}</h1>
         <h4> ${this.dataCadastro}</h4>
@@ -40,7 +68,9 @@ class MeuErro extends Error {
         <p> ${this.descricao}</p>
         <p> ${this.preco}</p>
         ` 
-       // return this.nome + this.dataCadastro + this.descricao + this.preco + this.imagemDestaque;
+      } else {
+        throw new MeuErro("Você nao preencheu os dados corretamente !")
+    }
      }
   }   
 
@@ -77,10 +107,7 @@ class MeuErro extends Error {
 
   mostrarProdutos() {
     return `
-      
-
-
-      <div class="list">
+        <div class="list">
     <div class="grid-container">
       <div class="col">
       <h4>${this.name}</h4>
